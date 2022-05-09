@@ -6,12 +6,15 @@ function Header(props) {
 </header>
 }
 
-function Nav() {
+function Nav(props) {
+  const lis = [
+    <li><a href="/read/1">html</a></li>,
+    <li><a href="/read/2">css</a></li>,
+    <li><a href="/read/3">javascript</a></li>
+  ]
   return <nav>
     <ol>
-      <li><a href="/read/1">html</a></li>
-      <li><a href="/read/2">css</a></li>
-      <li><a href="/read/3">javascript</a></li>
+      {lis}
     </ol>
 </nav>
 }
