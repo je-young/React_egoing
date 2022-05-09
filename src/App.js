@@ -24,11 +24,16 @@ function Article(props) {
 }
 
 function App() {
+  const topics = [
+    { id: 1, title: 'html', body: 'html is...' },
+    { id: 2, title: 'css', body: 'css is...' },
+    { id: 3, title: 'javascript', body: 'javascript is...' },
+  ];
   return (
     <div>
-      <Header title="REACT"></Header>
-      <Nav></Nav>
-      <Article title="Welcome" body="Hello, REACT"></Article>
+      <Header title="WEB"></Header>
+      <Nav topics={topics}></Nav>
+      <Article title="Welcome" body="Hello, WEB"></Article>
     </div>
   );
 }
