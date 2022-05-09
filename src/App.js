@@ -40,7 +40,9 @@ function App() {
       <Header title="WEB" onChangeMode={()=>{
         alert('Header');
       }}></Header>
-      <Nav topics={topics}></Nav>
+      <Nav topics={topics} onChangeMode={(id) => {
+        alert(id);
+      }}></Nav>
       <Article title="Welcome" body="Hello, WEB"></Article>
     </div>
   );
