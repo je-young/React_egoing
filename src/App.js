@@ -2,7 +2,7 @@ import './App.css';
 
 function Header(props) {
   return <header>
-    <h1><a href="/" onClick={function (event) {
+    <h1><a href="/" onClick={(event)=>{
       event.preventDefault();
       props.onChangeMode();
     }}>{props.title}</a></h1>
@@ -37,7 +37,7 @@ function App() {
   ];
   return (
     <div>
-      <Header title="WEB" onChangeMode={function () {
+      <Header title="WEB" onChangeMode={()=>{
         alert('Header');
       }}></Header>
       <Nav topics={topics}></Nav>
