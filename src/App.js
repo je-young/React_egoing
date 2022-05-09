@@ -34,7 +34,9 @@ function App() {
   ];
   return (
     <div>
-      <Header title="WEB"></Header>
+      <Header title="WEB" onChangeMode={function () {
+        alert('Header');
+      }}></Header>
       <Nav topics={topics}></Nav>
       <Article title="Welcome" body="Hello, WEB"></Article>
     </div>
