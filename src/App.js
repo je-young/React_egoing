@@ -3,7 +3,8 @@ import './App.css';
 function Header(props) {
   return <header>
     <h1><a href="/" onClick={function (event) {
-      event.preventDefault(); // a태그의 기본동작 방지(리로드안함)
+      event.preventDefault();
+      props.onChangeMode();
     }}>{props.title}</a></h1>
 </header>
 }
