@@ -60,6 +60,7 @@ function App() {
     { id: 3, title: 'javascript', body: 'javascript is...' },
   ]);
   let content = null;
+  let contextControl = null;
   if (mode === 'WELCOME') {
     content = <Article title="Welcome" body="Hello, WEB"></Article>
   } else if (mode === 'READ') {
@@ -71,6 +72,7 @@ function App() {
       }
     }
     content = <Article title={title} body={body}></Article>
+    contextControl = <li><a href={'/update/'+id}>Update</a></li>
   } else if (mode === 'CREATE') {
     content = <Create onCreate={(_title, _body) => {
       const newTopic = { id:nextId, title:_title, body:_body }
@@ -92,11 +94,13 @@ function App() {
         setId(_id);
       }}></Nav>
       {content}
-      <a href="/create" onClick={event => {
-        event.preventDefault();
-        setMode('CREATE');
-
-      }}>Create</a>
+      <ul>
+        <li><a href="/create" onClick={event => {
+          event.preventDefault();
+          setMode('CREATE');
+        }}>Create</a></li>
+        {contextControl}
+      </ul>
     </div>
   );
 }
